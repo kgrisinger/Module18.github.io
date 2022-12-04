@@ -1,0 +1,38 @@
+@media (min-width: $tablet-breakpoint) {
+    nav {
+        ul {
+            flex-direction: row;
+            padding: 0 0 2*$std-space 0;
+        }
+
+        li {
+            margin: 0 $std-space;
+        }
+
+        .logo {
+            margin-bottom: 0;
+        }
+    }
+
+    .main {
+        flex-direction: row;
+        gap: 2*$std-space;
+
+        article {
+            flex-basis: 70%;
+        }
+    }
+
+    .products {
+        grid-template-columns: 1fr 1fr;
+
+        h1 {
+            grid-column: span 2;
+        }
+    }
+
+    .contact {
+        align-items: center;
+        padding-top: 0;
+    }
+}

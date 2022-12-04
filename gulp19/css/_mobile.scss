@@ -1,0 +1,146 @@
+body {
+    background-color: $body-background;
+    @include boxmodel;
+    font-family: $body-font;
+    line-height: 2;
+}
+
+h1,
+h2,
+h3 {
+    font-family: $header-font;
+}
+
+h1 {
+    font-size: $header-font-size;
+    margin-bottom: 0;
+}
+
+figure {
+    margin: 0;
+}
+
+/* make images flexible */
+img {
+    max-width: 100%;
+}
+
+a {
+    color: $bgd-color;
+
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+header {
+    border-bottom: $content-border;
+}
+
+.button {
+    display: inline-block;
+    background-color: $bgd-color;
+    @include border-radius;
+    @include boxmodel(0, $std-space*.5 $std-space);
+    color: $color-main;
+    text-decoration: none;
+    border: $button-border;
+
+    &:hover {
+        background-color: $color-main;
+        color: $bgd-color;
+    }
+}
+
+/* navbar styling */
+nav {
+    ul {
+        @include boxmodel;
+        @include flexbox(center, center, column, wrap);
+        list-style-type: none;
+    }
+
+    li {
+        margin: 0 0 2*$std-space 0;
+        font-size: $nav-font-size;
+    }
+
+    .logo {
+        flex-basis: 100%;
+        text-align: center;
+        margin-bottom: $std-space;
+    }
+
+    img {
+        max-width: $logo-size;
+    }
+
+    a {
+        color: $color-main;
+        text-decoration: none;
+        display: block;
+
+        &:hover {
+            color: $default-orange;
+        }
+    }
+}
+
+/* establishes a white background */
+.main-bkgd {
+    background: $main-background;
+    padding-bottom: $main-background-padding;
+}
+
+/* sits inside of the white background, centered */
+.main {
+    @include page-wrapper;
+    display: flex;
+    flex-direction: column;
+    line-height: 2;
+
+    figure {
+        margin: 3*$std-space 0 0 0;
+    }
+
+    figure img {
+        width: 100%;
+        @include border-radius;
+    }
+}
+
+/* above-- margin: 0 auto; padding: 2rem;*/
+.products {
+    @include page-wrapper;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: $std-space;
+
+    figure img {
+        width: 100%;
+        @include border-radius;
+    }
+
+    h2 {
+        margin-top: 0;
+        line-height: 1.5;
+    }
+}
+
+footer {
+    color: $color-main;
+    text-align: center;
+
+    ul {
+        list-style-type: none;
+        @include boxmodel;
+        @include flexbox(center, center, row, wrap);
+    }
+
+    a {
+        color: $color-main;
+        font-size: 2*$std-space;
+        display: block;
+        margin: 0 $std-space 3*$std-space $std-space;
+    }
+}

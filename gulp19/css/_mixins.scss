@@ -1,0 +1,22 @@
+@mixin boxmodel($margin: 0, $padding: 0) {
+    margin: $margin;
+    padding: $padding;
+}
+
+@mixin border-radius($radius: $default-radius) {
+    border-radius: $radius;
+}
+
+@mixin page-wrapper {
+    max-width: $max-page-size;
+    @include boxmodel(0 auto, 2*$std-space);
+}
+
+@mixin flexbox($align: center, $justify: center, $direction: row, $wrap: wrap, $display: flex, $flex: 1 1 auto) {
+    display: $display;
+    justify-content: $justify;
+    flex-direction: $direction;
+    align-items: $align;
+    flex: $flex;
+    flex-wrap: $wrap;
+}

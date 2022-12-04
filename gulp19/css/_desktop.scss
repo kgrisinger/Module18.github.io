@@ -1,0 +1,25 @@
+@media (min-width: $desktop-breakpoint) {
+    nav {
+        .logo {
+            flex-basis: auto;
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        ul {
+            padding-bottom: 0;
+        }
+    }
+
+    .main article {
+        flex-basis: 50%;
+    }
+
+    .products {
+        grid-template-columns: 1fr 1fr 1fr;
+
+        h1 {
+            grid-column: span 3;
+        }
+    }
+}
